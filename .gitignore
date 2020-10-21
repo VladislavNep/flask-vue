@@ -1,0 +1,6 @@
+# Created by .ignore support plugin (hsz.mobi)
+backend/venv
+.idea
+frontend/node_modules
+*.pyc
+__pychash__
