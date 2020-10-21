@@ -6,4 +6,4 @@ ENV FLASK_ENV "development"
 WORKDIR /backend
 COPY . /backend
 RUN pip install -r requirements.txt
-CMD ['python', 'views.py']
+CMD ["flask", "run"]

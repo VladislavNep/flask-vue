@@ -3,4 +3,5 @@ backend/venv
 .idea
 frontend/node_modules
 *.pyc
-__pychash__
+__pycache__
+Будет удалено __pycache__/

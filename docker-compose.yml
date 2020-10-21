@@ -8,4 +8,4 @@ services:
   back:
     build: backend/
     ports:
-      - "5050:5000"
+      - "5000:5000"

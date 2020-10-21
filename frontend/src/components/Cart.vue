@@ -214,7 +214,7 @@ export default {
 
   methods: {
     getProducts() {
-      const path = 'http://127.0.0.1:5050/api/user/cart';
+      const path = 'http://localhost:5000/api/user/cart';
       axios.get(path)
         .then((res) => {
           this.products = res.data.products;
@@ -225,7 +225,7 @@ export default {
         });
     },
     addProduct(payload) {
-      const path = 'http://127.0.0.1:5050/api/user/cart';
+      const path = 'http://localhost:5000/api/user/cart';
       axios.post(path, payload)
         .then(() => {
           this.getProducts();
@@ -251,7 +251,7 @@ export default {
       this.updateProduct(payload, this.editProductForm.id);
     },
     updateProduct(payload, productID) {
-      const path = `http://127.0.0.1:5050/api/user/cart/product/${productID}`;
+      const path = `http://localhost:5000/api/user/cart/product/${productID}`;
       axios.put(path, payload)
         .then(() => {
           this.getProducts();
@@ -263,7 +263,7 @@ export default {
         });
     },
     removeProduct(productID) {
-      const path = `http://127.0.0.1:5050/api/user/cart/product/${productID}`;
+      const path = `http://localhost:5000/api/user/cart/product/${productID}`;
       axios.delete(path)
         .then(() => {
           this.getProducts();
