@@ -1,9 +1,6 @@
-FROM python:3.9.0-alpine3.12 as backend
+FROM python:3.7-stretch as backend
 MAINTAINER Vladislav Nepomnyashchikh 'vladislavnep@gmail.com'
-ENV PYTHONDONTWRITEBYTECODE 1
-ENV FLASK_APP "backend/views.py"
-ENV FLASK_ENV "development"
 WORKDIR /backend
 COPY . /backend
 RUN pip install -r requirements.txt
-CMD ["flask", "run"]
+CMD ["uwsgi", "uwsgi.ini"]

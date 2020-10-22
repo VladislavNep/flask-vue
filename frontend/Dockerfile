@@ -1,9 +1,7 @@
 FROM node:lts-alpine
-WORKDIR /app
+RUN npm install -g @vue/cli
 COPY package*.json ./
 RUN npm install
-COPY . /app
+COPY . /frontend
 RUN npm run build
-
-EXPOSE 8080
-CMD [ "npm", "run", "dev"]
+CMD [ "vue", "ui", "--headless" , "--port", "8000",  "--host", "0.0.0.0" ]

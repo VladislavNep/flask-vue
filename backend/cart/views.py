@@ -1,7 +1,8 @@
 from flask import jsonify, request
 from flask_cors import CORS
-from backend import services
-from backend import app
+from backend.cart import services
+from backend.cart import app
+
 
 cors = CORS(app, resources={r"/api/*": {"origins": "*"}})
 
@@ -18,7 +19,7 @@ def all_product():
 
 
 @app.route('/api/user/cart/product/<path:product_id>', methods=['PUT', 'DELETE'])
-def update_product(product_id):
+def single_product(product_id):
     response_object = {'status': 'success'}
     if request.method == 'PUT':
         post_data = request.get_json()
@@ -29,5 +30,3 @@ def update_product(product_id):
     return jsonify(response_object)
 
 
-if __name__ == '__main__':
-    app.run(debug=False, host='0.0.0.0')
